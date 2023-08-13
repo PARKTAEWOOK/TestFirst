@@ -17,6 +17,7 @@ public class programmers1_3 {
 
         if(clothes == null){
             return answer;
+            // 주석
         }
 
         HashMap<String, Integer> hm = new HashMap<>();
