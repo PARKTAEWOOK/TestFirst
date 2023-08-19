@@ -38,7 +38,7 @@ public class Test1_13 {
 
         // [실행] 버튼을 누르면 출력 값을 볼 수 있습니다.
         System.out.println("Hello Java");
-// 합을 저장할 저장공간 선언
+        // 합을 저장할 저장공간 선언
         ArrayList<Integer> list = new ArrayList<Integer>();
         // for문을 이용하여 배열의 합을 구한다.
         for(int i = 0; i < nums.length; i++) {

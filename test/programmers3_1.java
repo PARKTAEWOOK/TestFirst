@@ -28,6 +28,8 @@ public class programmers3_1 {
 //    가진 음식의 스코빌 지수 = [13, 9, 10, 12]
 //
 //    모든 음식의 스코빌 지수가 7 이상이 되었고 이때 섞은 횟수는 2회입니다.
+    // https://crazykim2.tistory.com/575
+
     public static void main(String[] args){
 //        int[] scovile = {1, 2, 3, 9, 10, 12};
         int[] scovile = {3, 2, 1, 12, 10, 9};
