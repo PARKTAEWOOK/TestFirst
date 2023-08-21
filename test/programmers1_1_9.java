@@ -10,9 +10,7 @@ public class programmers1_1_9 {
     public static void main(String[] args) {
 
        int a = 45;
-        // 0 ,2, 5   5,,4
 
-//        System.out.println(solution(num_lists,3));
         System.out.println(solution(a));
     }
 

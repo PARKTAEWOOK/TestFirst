@@ -16,9 +16,7 @@ public class programmers1_1_8 {
 
         int[] a = {1,  2,3,4};
         int[] b = {-3,-1,0,2};
-        // 0 ,2, 5   5,,4
 
-//        System.out.println(solution(num_lists,3));
         System.out.println(solution(a, b));
     }
 
