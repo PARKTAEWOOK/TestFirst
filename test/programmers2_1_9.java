@@ -28,6 +28,7 @@ public class programmers2_1_9 {
     public static void main(String[] args) {
         String t = "abracadabra";
 //        String t = "foobar";
+        System.out.println(t);
         System.out.println( "정답 : "+ solution2(t) );
 
     }
@@ -57,13 +58,16 @@ public class programmers2_1_9 {
         int answer = 1;
 
         char x = s.charAt(0);
+        System.out.println("Char :" + x);
         int count = 1;
         for (int i = 1; i < s.length(); i++) {
+            System.out.println("count:" + count);
             if (count == 0) {
                 answer++;
                 x = s.charAt(i);
+                System.out.println("charAt : " +s.charAt(i) );
             }
-
+            System.out.println("charAt222 : " +s.charAt(i) );
             if (x == s.charAt(i)) {
                 count++;
             } else {

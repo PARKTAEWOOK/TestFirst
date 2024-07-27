@@ -48,9 +48,9 @@ public class StreamTest1 {
 
         List<String> list = Arrays.asList("Java", "C", "Python", "Kotlin", "Go");
 //
-        list.stream().sorted()
-                .collect(Collectors.toList())
-                .get(0);
+        List<String> list1 = list.stream().sorted().collect(Collectors.toList());
+
+        list1.stream().forEach(System.out::println);
 //                .forEach(x -> System.out.println(x)); // C , Go , Java , Kotlin , Python
 
 

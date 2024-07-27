@@ -74,6 +74,7 @@ public class programmers2_1_8 {
                 System.out.println(s.charAt(i));
             } else {
                 // 해당 문자가 map에 존재하면 i - 이전 문자의 인덱스
+                System.out.println("  " + s.charAt(i) + " " + map.get(s.charAt(i)) + " i :" + i); ;
                 answer[i] = i - map.get(s.charAt(i));
 
             }

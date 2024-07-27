@@ -14,7 +14,7 @@ public class programmers2_1_5 {
 //    F(5) = F(3) + F(4) = 2 + 3 = 5
 //    와 같이 이어집니다.
 //
-//2 이상의 n이 입력되었을 때, n번째 피보나치 수를 1234567으로 나눈 나머지를 리턴하는 함수, solution을 완성해 주세요.
+//  2 이상의 n이 입력되었을 때, n번째 피보나치 수를 1234567으로 나눈 나머지를 리턴하는 함수, solution을 완성해 주세요.
 //
 //            제한 사항
 //    n은 2 이상 100,000 이하인 자연수입니다.
@@ -23,7 +23,7 @@ public class programmers2_1_5 {
 //            3	2
 //            5	5
     public static void main(String[] args) {
-        int i = 3;
+        int i = 2;
 
         System.out.println( "정답 : "+ solution(i) );
 

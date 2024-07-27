@@ -53,8 +53,9 @@ public class programmers2_1_7 {
         int answer = 0;
 
         for (int i = 0; i < length; i++) {
+            System.out.println("i :" + i + " length:" + length + " p.length():" + (i +p.length()));
             String temp = t.substring(i, i + p.length());
-
+            System.out.println(temp);
             if (Long.parseLong(temp) <= pNum) {
                 answer++;
             }

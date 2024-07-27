@@ -19,8 +19,8 @@ public class programmers2_1_4 {
 //        ")()("	false
 //        "(()("	false
     public static void main(String[] args) {
-        String s = "()()";
-//        String s = ")()(";
+//        String s = "()()";
+        String s = ")()(";
 
         System.out.println( "정답 : "+ solution2(s) );
 
