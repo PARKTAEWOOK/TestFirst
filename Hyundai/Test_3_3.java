@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 /**
- * https://softeer.ai/practice/7727
+ * https://softeer.ai/practice/7727 _ 함께하는 효도 못풀겠당
  */
 public class Test_3_3 {
 

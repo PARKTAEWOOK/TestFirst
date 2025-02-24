@@ -1,5 +1,10 @@
 package test;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
+import java.util.Locale;
+
 public class test01 {
 
     /**
@@ -18,6 +23,8 @@ public class test01 {
     public static String soultion(String sample1, String sample2){
 
         String resultValue = "";
+        System.out.println(LocalDateTime.of(2025, 9,24,11,11).minusYears(1).plusDays(1).format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
+        extracted("20241028");
 
         if(sample1.equals(sample2)){
             return sample1;
@@ -54,4 +61,52 @@ public class test01 {
 
         return resultValue;
     }
+
+    private static void extracted(String workDate) {
+        Calendar calendar = Calendar.getInstance();
+//        Calendar calendar = Calendar.getInstance(Locale.KOREA);
+
+        calendar.set(Calendar.YEAR, Integer.parseInt(workDate.substring(0, 4)));
+        calendar.set(Calendar.MONTH, Integer.parseInt(workDate.substring(4, 6)) - 1);
+        calendar.set(Calendar.DATE, Integer.parseInt(workDate.substring(6, 8)));
+        // 한 주의 시작 요일 설정
+        calendar.setFirstDayOfWeek(Calendar.MONDAY);
+        // 첫 주를 계산할 때 최소로 있어야 하는 날짜 수 설정
+        calendar.setMinimalDaysInFirstWeek(4);
+        // 해당 월의 몇 주차인지 계산
+        calendar.set(Calendar.YEAR, Integer.parseInt(workDate.substring(0, 4)));
+        calendar.set(Calendar.MONTH, Integer.parseInt(workDate.substring(4, 6)) - 1);
+        calendar.set(Calendar.DATE, Integer.parseInt(workDate.substring(6, 8)));
+
+//        System.out.println("calendar = " + calendar.getTime().toString());
+//        System.out.println("calendar = " + Integer.parseInt(workDate.substring(0, 4)));
+//        System.out.println("calendar = " + (Integer.parseInt(workDate.substring(4, 6)) - 1));
+//        System.out.println("calendar = " + Integer.parseInt(workDate.substring(6, 8)));
+//        // 한 주의 시작 요일 설정
+        calendar.setFirstDayOfWeek(Calendar.MONDAY);
+        // 첫 주를 계산할 때 최소로 있어야 하는 날짜 수 설정
+        calendar.setMinimalDaysInFirstWeek(4);
+        // 해당 월의 몇 주차인지 계산
+        int weekOfMonth = calendar.get(Calendar.WEEK_OF_MONTH);
+//        return String.valueOf(weekOfMonth);
+
+        System.out.println("몆주차 ::: " + String.valueOf(weekOfMonth));
+    }
+
+    // 주차 정보를 가져오기 위한 함수
+    private static String getWeekOfMonth() {
+        Calendar calendar = Calendar.getInstance(Locale.KOREA);
+
+        calendar.set(2024,Calendar.SEPTEMBER,19);
+
+        System.out.println("calendar = " + calendar);
+        // 한 주의 시작 요일 설정
+        calendar.setFirstDayOfWeek(Calendar.MONDAY);
+        // 첫 주를 계산할 때 최소로 있어야 하는 날짜 수 설정
+        calendar.setMinimalDaysInFirstWeek(4);
+        // 해당 월의 몇 주차인지 계산
+        int weekOfMonth = calendar.get(Calendar.WEEK_OF_MONTH);
+        return String.valueOf(weekOfMonth);
+    }
+
 }

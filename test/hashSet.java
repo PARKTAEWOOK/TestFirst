@@ -1,7 +1,9 @@
 package test;
 
 import java.util.Arrays;
+import java.util.Deque;
 import java.util.HashSet;
+import java.util.LinkedList;
 
 public class hashSet {
 
@@ -33,5 +35,16 @@ public class hashSet {
     if(complement1.size() !=0){
       System.out.println( "ddd :" +complement1.toString());
     }
+
+    Deque<Integer> deque = new LinkedList<>();
+    deque.offer(3);
+    deque.offer(2);
+    deque.offer(1);
+    deque.offer(4);
+
+    System.out.println(deque.poll());
+    System.out.println(deque.poll());
+    System.out.println(deque.poll());
+
   }
 }
