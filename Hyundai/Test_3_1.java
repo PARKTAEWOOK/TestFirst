@@ -20,6 +20,7 @@ public class Test_3_1 {
     }
     Arrays.sort(arr);
 //    Arrays.stream(arr).forEach(System.out::print);
+    System.out.println(arr[N - 1]);
     System.out.println(N-1 + arr[N - 1]);
 
   }

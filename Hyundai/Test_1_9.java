@@ -7,6 +7,7 @@ import java.util.Deque;
 
 /**
  * https://softeer.ai/practice/9498
+ * 레벨 2
  */
 public class Test_1_9 {
 

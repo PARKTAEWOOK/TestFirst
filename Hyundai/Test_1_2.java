@@ -5,7 +5,7 @@ import java.io.InputStreamReader;
 
 /**
  * https://softeer.ai/app/assessment/index.html?xid=357619&xsrfToken=V848tnDfZdqg2OXTvTQDGcZPMmI5ajS5&testType=practice
- *
+ * https://softeer.ai/practice/7698
  *
  */
 public class Test_1_2 {

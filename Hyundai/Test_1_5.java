@@ -6,6 +6,9 @@ import java.util.StringTokenizer;
 
 /**
  * https://softeer.ai/app/assessment/index.html?xid=358398&xsrfToken=an3rUDl1SK0qDhVrrGdDDr00lgIM1xAA&testType=practice
+ * https://softeer.ai/practice/7626
+ *
+ * 다시 볼 것
  */
 public class Test_1_5 {
   static int n, minDist, cnt;

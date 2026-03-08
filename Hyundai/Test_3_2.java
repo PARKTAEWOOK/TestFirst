@@ -6,6 +6,7 @@ import java.util.StringTokenizer;
 
 /**
  * https://softeer.ai/app/assessment/index.html?xid=423225&xsrfToken=ht4ev7iufWSO9gRR7iys7stSm5zjxlfT&testType=practice   Hanyang Popularity Exceeding Competition
+ * https://softeer.ai/practice/9495
  */
 public class Test_3_2 {
 
@@ -37,7 +38,7 @@ public class Test_3_2 {
       }
     }
 
-    System.out.println(returnValue);
+    System.out.println("returnValue = " + returnValue);
   }
 
   public static void solution() throws Exception{

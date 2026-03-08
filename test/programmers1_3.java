@@ -1,5 +1,8 @@
 package test;
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.HashMap;
 
 public class programmers1_3 {
@@ -10,6 +13,27 @@ public class programmers1_3 {
         String[][] cloths2 = {{"crowmask", "face"}, {"bluesunglasses", "face"}, {"smoky_makeup", "face"}};
 
         System.out.println( " 조합할 수 있는 총 개수는 " + String.valueOf(solution(cloths)));
+
+//        LocalDate date = LocalDate.now();
+
+//        // 날짜를 31일로 설정
+//        LocalDate lastDayOfMonth = date.withDayOfMonth(31);
+//
+        LocalDate date = LocalDate.now();
+
+// 날짜를 4월 1일로 설정
+        LocalDate firstDayOfApril = date.withMonth(4).withDayOfMonth(3);
+
+//        LocalDateTime.of(date, LocalTime.MAX);
+        System.out.println("날짜 설정: " + firstDayOfApril);
+        System.out.println("날짜 설정 MAX: " + LocalDateTime.of(firstDayOfApril, LocalTime.MAX));
+        System.out.println("날짜 설정 MIN : " + LocalDateTime.of(firstDayOfApril, LocalTime.MIN));
+
+
+        LocalDate DEFAULT_START_DATE = date.minusYears(3);
+        LocalDate DEFAULT_END_DATE = date.minusDays(4);
+        System.out.println("LocalDate.now().minusDays(3): " + DEFAULT_START_DATE);
+        System.out.println("LocalDate.now().minusDays(4): "+DEFAULT_END_DATE);
     }
 
     public static int solution(String[][] clothes) {

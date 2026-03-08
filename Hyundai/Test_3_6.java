@@ -1,58 +1,76 @@
 package Hyundai;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Deque;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.StringTokenizer;
 
 /**
  * https://softeer.ai/practice/7697
+ *
+ * 참고 : https://velog.io/@zvyg1023/Softeer-Level.3-Phi-Squared
  */
 public class Test_3_6 {
-  static Deque<Integer> nx = new LinkedList<>();
-  static int N;
-  static HashMap<Integer, Integer> map = new HashMap<>();
-  public static void main(String[] args) throws Exception{
-    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-    N = Integer.parseInt(br.readLine());
-    StringTokenizer st = new StringTokenizer(br.readLine());
+  // 미생물을 나타내는 클래스
+  static class Microbe {
+    int idx;   // 미생물의 초기 위치 인덱스
+    long size; // 미생물의 크기
 
-    for (int i = 0; i < N; i++) {
-      map.put(i, Integer.parseInt(st.nextToken()));
-    }
-
-    for (int i = 0; i < N; i++) {
-      System.out.println(map.get(i));
-      getPhiSquared(i);
-    }
-
-    System.out.println("nx.size() = " + nx.size());
-    for(int i = 0; i < nx.size(); i++){
-      System.out.println(nx.poll());
+    public Microbe(int idx, long size) {
+      this.idx = idx;
+      this.size = size;
     }
   }
 
-  public static int getPhiSquared(int indexNumber){
-    int sum = 0;
-    System.out.println("indexNumber = " + indexNumber);
-    if(indexNumber == (N-1)) return 0;
+  public static void main(String[] args) throws IOException {
+    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-    if(indexNumber == 0){
-      if (map.get(indexNumber) >= map.get(indexNumber+1))
-        nx.offer(map.get(indexNumber)+map.get(indexNumber+1));
+    int N = Integer.parseInt(br.readLine()); // 미생물의 개수
+
+    Deque<Microbe> curDeque = new LinkedList<>(); // 현재 일차에서 처리할 미생물
+    Deque<Microbe> nextDeque = new LinkedList<>(); // 다음 일차로 넘어갈 미생물
+
+    // 초기 미생물 정보 입력 받기
+    StringTokenizer st = new StringTokenizer(br.readLine());
+    for (int i = 0; i < N; i++) {
+      curDeque.offerLast(new Microbe(i + 1, Long.parseLong(st.nextToken())));
     }
 
-    if(indexNumber > 0) {
-      if (!(map.get(indexNumber - 1) >= map.get(indexNumber))) {
-        if (map.get(indexNumber) >= map.get(indexNumber + 1)) {
-          sum = map.get(indexNumber) + map.get(indexNumber + 1);
-          System.out.println("sum = " + sum);
-          nx.offer(sum);
+    // 큐에 한 개의 미생물만 남을 때까지 반복
+    while (curDeque.size() > 1) {
+      while (!curDeque.isEmpty()) {
+        Microbe curMicrobe = curDeque.pollFirst(); // 현재 처리할 미생물
+        long curSize = curMicrobe.size;
+
+        // 다음 일차 미생물 큐에 있는 미생물이 현재 미생물보다 작은 경우 합치기
+        if (!nextDeque.isEmpty() && nextDeque.peekLast().size <= curMicrobe.size) {
+          Microbe lastMicrobe = nextDeque.pollLast();
+          curSize += lastMicrobe.size;
         }
+
+        // 현재 일차 미생물 큐에 있는 다음 미생물이 현재 미생물보다 작은 경우 합치기
+        if (!curDeque.isEmpty() && curDeque.peekFirst().size <= curMicrobe.size) {
+          Microbe firstMicrobe = curDeque.pollFirst();
+          curSize += firstMicrobe.size;
+        }
+
+        // 합쳐진 결과를 다음 일차 큐에 추가
+        nextDeque.addLast(new Microbe(curMicrobe.idx, curSize));
       }
+
+      // 다음 일차 준비
+      curDeque = nextDeque;
+      nextDeque = new LinkedList<>();
     }
-    return 0;
+
+    // 최종 남은 미생물 정보 출력
+    Microbe answer = curDeque.pollFirst();
+    System.out.println(answer.size); // 남은 미생물의 크기
+    System.out.println(answer.idx);  // 남은 미생물의 초기 인덱스
+
+
+
   }
 }

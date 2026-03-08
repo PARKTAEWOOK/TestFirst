@@ -21,7 +21,7 @@ public class Test_3_5 {
       StringTokenizer st = new StringTokenizer(br.readLine(), " ");
       String Si = st.nextToken(); //Exit
       String Ti = st.nextToken(); //Alin
-
+      System.out.println("Si : " + Si + " Ti : " + Ti);
       for(int j = 0; j < Si.length(); j++){
         if(Si.charAt(j) == 'x' || Si.charAt(j) == 'X'){
           Pi = j;
